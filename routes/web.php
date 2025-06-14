@@ -1,9 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 
-Route::get('/', function () {
-    $products = Product::with('galleries')->get();
-    return view('welcome', compact('products'));
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/about', [HomeController::class, 'about']);

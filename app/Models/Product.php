@@ -11,10 +11,10 @@ class Product extends Model
         'nama_products',
         'totalPrice',
         'description',
+        'thumbnails',
     ];
 
-    public function galleries(): HasMany
-    {
-        return $this->hasMany(ProductsGallery::class, 'products_id');
-    }
+    protected $casts = [
+        'thumbnails' => 'array',
+    ];
 }

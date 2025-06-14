@@ -47,9 +47,7 @@ class ProductResource extends Resource
                     ->columnSpanFull(),
                 FileUpload::make('thumbnails')
                     ->label('Gambar Produk')
-                    ->multiple()
                     ->image()
-                    ->directory('products')
                     ->preserveFilenames()
                     ->required()
                     ->maxSize(1024 * 5)
