@@ -9,8 +9,7 @@
           <div class="image-info">
             <h2 class="mb-3">{{ $product->nama_products }}</h2>
             <p class="mb-2">Rp {{ number_format($product->totalPrice, 0, ',', '.') }}</p>
-           <a href="single.html" class="btn btn-outline-white py-2 px-4">Details Package</a>
-          </div>
+            <a href="{{ route('order.create', $product->id) }}" class="btn btn-outline-white py-2 px-4">Details Package</a>          </div>
           @php
             $thumbs = is_array($product->thumbnails) ? $product->thumbnails : json_decode($product->thumbnails, true);
             $img = $thumbs[0] ?? null;
