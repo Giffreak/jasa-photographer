@@ -19,8 +19,7 @@
         <div class="col-md-6">
             <form action="{{ route('order.store') }}" method="POST">
                 @csrf
-                <input type="hidden" name="product_id" value="{{ $product->id }}">
-
+                <input type="hidden" name="products_id" value="{{ $product->id }}">
                 <div class="form-group">
                     <label class="text-white">Email</label>
                     <input type="email" name="email" class="form-control" required>
@@ -54,8 +53,7 @@
                     </label>
                 </div>
 
-                <button type="submit" class="btn btn-success btn-block">Pesan</button>
-            </form>
+            <button type="submit" class="btn btn-success btn-block">Pesan</button>            </form>
         </div>
     </div>
 </div>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('no_hp');
             $table->date('day_start');
             $table->date('day_end');
-            $table->string('proof')->default('accepted')->change();
+            $table->string('proof')->default('0');
             $table->foreignId('products_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

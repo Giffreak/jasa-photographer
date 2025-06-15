@@ -19,10 +19,6 @@ class Order extends Model
     {
         return $this->belongsTo(Product::class, 'products_id');
     }
-    public function getProofUrlAttribute()
-    {
-        return asset('storage/' . $this->proof);
-    }
     public function getDayStartFormattedAttribute()
     {
         return \Carbon\Carbon::parse($this->day_start)->format('d F Y');

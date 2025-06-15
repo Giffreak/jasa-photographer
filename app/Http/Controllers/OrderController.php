@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Product;
+use Filament\Notifications\Notification;
 
 class OrderController extends Controller
 {
@@ -19,16 +20,15 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'product_id'      => 'required|exists:products,id',
+            'products_id'      => 'required|exists:products,id',
             'email'           => 'required|email',
             'nama_pemesan'  => 'required|string|max:255',
             'no_hp'           => 'required|string|max:20',
             'day_start'       => 'required|date',
             'day_end'         => 'required|date|after_or_equal:day_start',
-            'proof'           => 'accepted',
         ]);
 
-         $validated['proof'] = 'accepted';
+         $validated['proof'] = false;
 
     Order::create($validated);
 
